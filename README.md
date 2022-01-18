@@ -1,46 +1,29 @@
-# Getting Started with Create React App
+# Rick and Morty en La Cocina del Código
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://user-images.githubusercontent.com/1213542/115487783-c52aa100-a22f-11eb-9021-1c428cff3109.png)
 
-## Available Scripts
+Este proyecto contiene un listado de personajes de Rick and Morty usando [la API pública de GraphQL de Rick and Morty](https://rickandmortyapi.com/).
 
-In the project directory, you can run:
+Empezando de un proyecto base creado a partir de create-react-app con TypeScript, le agregaremos un componente con `styled-components` para cada tarjeta y obtendremos los datos de la API generando todos los tipos de TypeScript, las consultas y los hooks de React con un generador de código. Sí, nada de promesas, nada de axios ni de fetch.
 
-### `npm start`
+En este [mockup](https://www.figma.com/file/olHQvzGD4NOQ8CdaKIlE11/Rick-and-Morty-en-La-Cocina-del-C%C3%B3digo?node-id=1%3A48) de Figma vas a encontrar las especificacione para las tarjetas de cada personaje y los espaciados para el listado.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Si este proyecto te gustó, agregale una estrella con el botón que figura en el header del proyecto.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Instalación e inicio de la app
 
-### `npm test`
+```
+npm install
+npm run update:graphql
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Pasos
 
-### `npm run build`
+Este proyecto contiene varios branches que podés navegar clickeando la tecla `W` en la home del proyecto. En `master` encontrarás el resultado final.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Sobre el autor:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Este proyecto fue creado por Sacha Lifszyc y explicado en el Meetup de MedellínJS [Aprendé el Stack Más Demandado del 2021](https://www.youtube.com/watch?v=MMYUiR6zNY8&list=WL&index=27).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[Repositorio de Sacha](https://github.com/sachalifs/rickandmorty/pulls)
