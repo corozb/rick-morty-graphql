@@ -1,5 +1,6 @@
+import { Card, ImageWrapper, Image, Section, ContentWrapper, StatusIndicator } from './styles'
 import { Typography } from '../Typography'
-import { Card, ImageWrapper, Image, Section, ContentWrapper } from './styles'
+import { CharacterStatus } from '../../types'
 
 function CharacterCard() {
   return (
@@ -13,6 +14,7 @@ function CharacterCard() {
             Morty Smith
           </Typography>
           <Typography color='white' size='small'>
+            <StatusIndicator status={CharacterStatus.Unknown} />
             Alive - Human
           </Typography>
         </Section>
