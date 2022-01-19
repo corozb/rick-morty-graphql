@@ -1,4 +1,5 @@
-# Rick and Morty en La Cocina del Código
+# Rick and Morty con GraphQL
+[DEMO](https://rick-and-morty-cris.netlify.app/)
 
 ![image](https://user-images.githubusercontent.com/1213542/115487783-c52aa100-a22f-11eb-9021-1c428cff3109.png)
 
