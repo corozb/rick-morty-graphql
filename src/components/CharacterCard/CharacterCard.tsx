@@ -2,8 +2,16 @@ import { Card, ImageWrapper, Image, Section, ContentWrapper, StatusIndicator } f
 import { Typography } from '../Typography'
 import { CharacterStatus } from '../../types'
 
-function CharacterCard({ character }: any) {
-  const { image, name, status, species, location } = character
+type Props = {
+  name: string
+  image: string
+  status: CharacterStatus
+  species: string
+  lastKnownLocation: string
+  firstEpisode: string
+}
+
+function CharacterCard({ name, image, status, species, lastKnownLocation, firstEpisode }: Props) {
   return (
     <Card>
       <ImageWrapper>
@@ -24,7 +32,7 @@ function CharacterCard({ character }: any) {
             Last known location:
           </Typography>
           <Typography color='white' size='medium'>
-            {location.name}
+            {lastKnownLocation}
           </Typography>
         </Section>
         <Section>
@@ -32,7 +40,7 @@ function CharacterCard({ character }: any) {
             First seen in:
           </Typography>
           <Typography color='white' size='medium'>
-            The Rickshank Rickdemption
+            {firstEpisode}
           </Typography>
         </Section>
       </ContentWrapper>

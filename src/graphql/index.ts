@@ -202,12 +202,14 @@ export type QueryLocationsByIdsArgs = {
   ids: Array<Scalars['ID']>;
 };
 
-export type CharacterFragment = { __typename?: 'Character', id?: string | null | undefined, name?: string | null | undefined, status?: string | null | undefined, species?: string | null | undefined, type?: string | null | undefined, gender?: string | null | undefined, image?: string | null | undefined, created?: string | null | undefined, origin?: { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined } | null | undefined, location?: { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined, type?: string | null | undefined, dimension?: string | null | undefined, created?: string | null | undefined } | null | undefined };
+export type CharacterFragment = { __typename?: 'Character', id?: string | null | undefined, name?: string | null | undefined, status?: string | null | undefined, species?: string | null | undefined, type?: string | null | undefined, gender?: string | null | undefined, image?: string | null | undefined, created?: string | null | undefined, origin?: { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined } | null | undefined, location?: { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined, type?: string | null | undefined, dimension?: string | null | undefined, created?: string | null | undefined } | null | undefined, episode: Array<{ __typename?: 'Episode', id?: string | null | undefined, name?: string | null | undefined } | null | undefined> };
 
-export type GetCharactersQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetCharactersQueryVariables = Exact<{
+  page: Scalars['Int'];
+}>;
 
 
-export type GetCharactersQuery = { __typename?: 'Query', characters?: { __typename?: 'Characters', results?: Array<{ __typename?: 'Character', id?: string | null | undefined, name?: string | null | undefined, status?: string | null | undefined, species?: string | null | undefined, type?: string | null | undefined, gender?: string | null | undefined, image?: string | null | undefined, created?: string | null | undefined, origin?: { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined } | null | undefined, location?: { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined, type?: string | null | undefined, dimension?: string | null | undefined, created?: string | null | undefined } | null | undefined } | null | undefined> | null | undefined } | null | undefined };
+export type GetCharactersQuery = { __typename?: 'Query', characters?: { __typename?: 'Characters', results?: Array<{ __typename?: 'Character', id?: string | null | undefined, name?: string | null | undefined, status?: string | null | undefined, species?: string | null | undefined, type?: string | null | undefined, gender?: string | null | undefined, image?: string | null | undefined, created?: string | null | undefined, origin?: { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined } | null | undefined, location?: { __typename?: 'Location', id?: string | null | undefined, name?: string | null | undefined, type?: string | null | undefined, dimension?: string | null | undefined, created?: string | null | undefined } | null | undefined, episode: Array<{ __typename?: 'Episode', id?: string | null | undefined, name?: string | null | undefined } | null | undefined> } | null | undefined> | null | undefined } | null | undefined };
 
 export const CharacterFragmentDoc = gql`
     fragment Character on Character {
@@ -228,13 +230,17 @@ export const CharacterFragmentDoc = gql`
     dimension
     created
   }
+  episode {
+    id
+    name
+  }
   image
   created
 }
     `;
 export const GetCharactersDocument = gql`
-    query getCharacters {
-  characters {
+    query getCharacters($page: Int!) {
+  characters(page: $page) {
     results {
       ...Character
     }
@@ -254,10 +260,11 @@ export const GetCharactersDocument = gql`
  * @example
  * const { data, loading, error } = useGetCharactersQuery({
  *   variables: {
+ *      page: // value for 'page'
  *   },
  * });
  */
-export function useGetCharactersQuery(baseOptions?: Apollo.QueryHookOptions<GetCharactersQuery, GetCharactersQueryVariables>) {
+export function useGetCharactersQuery(baseOptions: Apollo.QueryHookOptions<GetCharactersQuery, GetCharactersQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
         return Apollo.useQuery<GetCharactersQuery, GetCharactersQueryVariables>(GetCharactersDocument, options);
       }

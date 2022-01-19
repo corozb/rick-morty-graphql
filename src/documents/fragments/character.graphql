@@ -16,6 +16,10 @@ fragment Character on Character {
     dimension
     created
   }
+  episode {
+    id
+    name
+  }
   image
   created
 }

@@ -4,7 +4,7 @@ import { CharacterStatus } from '../../types'
 const CharacterStatusColor = {
   [CharacterStatus.Alive]: '#76c858',
   [CharacterStatus.Dead]: '#d63d2e',
-  [CharacterStatus.Unknown]: '#9e9e9e',
+  [CharacterStatus.unknown]: '#9e9e9e',
 }
 
 export const Card = styled.div`
