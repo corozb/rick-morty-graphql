@@ -9,8 +9,8 @@ function CharactersList({ characters }: Props) {
   return (
     <ListWrapper>
       <List>
-        {characters.map((_, index) => (
-          <CharacterCard key={index} />
+        {characters.map((character, index) => (
+          <CharacterCard key={index} character={character} />
         ))}
       </List>
     </ListWrapper>

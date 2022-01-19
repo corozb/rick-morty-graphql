@@ -2,20 +2,21 @@ import { Card, ImageWrapper, Image, Section, ContentWrapper, StatusIndicator } f
 import { Typography } from '../Typography'
 import { CharacterStatus } from '../../types'
 
-function CharacterCard() {
+function CharacterCard({ character }: any) {
+  const { image, name, status, species, location } = character
   return (
     <Card>
       <ImageWrapper>
-        <Image src='https://rickandmortyapi.com/api/character/avatar/1.jpeg' alt='Morty Smith' />
+        <Image src={image} alt={name} />
       </ImageWrapper>
       <ContentWrapper>
         <Section>
           <Typography variant='heading' color='white' size='large'>
-            Morty Smith
+            {name}
           </Typography>
           <Typography color='white' size='small'>
-            <StatusIndicator status={CharacterStatus.Unknown} />
-            Alive - Human
+            <StatusIndicator status={status} />
+            {status} - {species}
           </Typography>
         </Section>
         <Section>
@@ -23,7 +24,7 @@ function CharacterCard() {
             Last known location:
           </Typography>
           <Typography color='white' size='medium'>
-            Earth (C-137)
+            {location.name}
           </Typography>
         </Section>
         <Section>
